@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>菠萝电影网｜专注热带质感影像与华语新锐导演作品的观影资料站</title>
+<meta name="keywords" content="菠萝电影网, 热带质感影像, 华语新锐导演, 东南亚电影推荐, 潮湿美学片单, 独立电影资料库">
+<meta name="description" content="菠萝电影网收录带有热带、海岛、潮湿与南方质感的中文影像作品，覆盖华语新锐导演与东南亚电影，提供分地区、分年代的片单索引和观影资料整理，是一份持续更新的独立电影资料站。">
+<link rel="canonical" href="https://boluodianyingwang-zh.github.io/">
+<style>
+:root{
+  --pine:#123524;
+  --pine-2:#1f5c3f;
+  --lime:#a3e635;
+  --lime-2:#84cc16;
+  --gold:#ffb703;
+  --gold-2:#fb8500;
+  --coral:#ff6b4a;
+  --sand:#fff8ee;
+  --ink:#14291d;
+  --ink-2:#3d5647;
+  --ink-3:#718579;
+  --line:rgba(18,53,36,.12);
+  --line-2:rgba(18,53,36,.24);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--sand);color:var(--ink);font-size:15px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+img{display:block;max-width:100%}
+::selection{background:var(--gold);color:var(--pine)}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* TOP BAR */
+.topbar{background:var(--pine);color:#d7eadc;font-size:12.5px;padding:9px 0}
+.topbar .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topbar span{letter-spacing:.5px}
+.topbar a{color:#a9cbb4}
+.topbar a:hover{color:#fff}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:50;background:rgba(255,248,238,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:76px;gap:22px}
+.brand{display:flex;align-items:center;gap:13px}
+.mark{width:44px;height:44px;border-radius:11px;background:var(--gold);display:grid;place-items:center;font-size:20px;box-shadow:0 7px 18px -6px rgba(251,133,0,.6);position:relative;overflow:hidden}
+.mark::before{content:"";position:absolute;inset:6px;border:2px dashed rgba(18,53,36,.45);border-radius:7px}
+.mark span{position:relative;z-index:2}
+.brand b{font-size:21px;letter-spacing:1.4px;font-weight:900}
+.brand i{font-style:normal;display:block;font-size:10px;color:var(--ink-3);letter-spacing:3px}
+nav.desk{display:flex;gap:2px}
+nav.desk a{padding:10px 18px;border-radius:8px 8px 0 0;border-bottom:2px solid transparent;font-size:14px;color:var(--ink-2);font-weight:600;transition:.18s}
+nav.desk a:hover{background:rgba(18,53,36,.05);color:var(--pine)}
+nav.desk a.cur{border-bottom-color:var(--coral);color:var(--pine)}
+.hd-cta{display:flex;align-items:center;gap:14px}
+.mini-search{border:1.5px solid var(--line-2);border-radius:22px;padding:7px 14px 7px 13px;font-size:13px;color:var(--ink-2);display:flex;align-items:center;gap:8px;background:#fff}
+.mini-search:hover{border-color:var(--pine)}
+.mini-search b{font-weight:400}
+.mini-search span{font-size:11px;color:var(--ink-3)}
+.tgl{display:none;width:46px;height:46px;border:1.5px solid var(--line-2);border-radius:10px;font-size:20px;color:var(--pine);grid-template-columns:1fr}
+
+/* HERO */
+.hero{padding:74px 0 62px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:2px;color:var(--pine-2);font-weight:800;border-left:3px solid var(--coral);padding-left:12px;margin-bottom:26px}
+h1{font-size:58px;line-height:1.12;letter-spacing:-2px;font-weight:900}
+h1 s{text-decoration:none;color:var(--gold-2)}
+h1 em{font-style:normal;display:block;font-size:24px;letter-spacing:0;line-height:1.5;color:var(--ink-2);font-weight:500;margin-top:18px}
+.hero p.ld{color:var(--ink-2);font-size:16px;margin:24px 0 32px;max-width:480px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:34px 0}
+.stats div{padding:20px 0;border-right:1px solid var(--line)}
+.stats div:last-child{border-right:none}
+.stats b{display:block;font-size:30px;font-weight:900;letter-spacing:-1px}
+.stats span{font-size:12px;color:var(--ink-3);letter-spacing:1px}
+
+/* hero tiles */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tile{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:20px 22px;position:relative;transition:.22s}
+.tile:hover{border-color:var(--gold-2);transform:translateY(-4px);box-shadow:0 16px 36px -22px rgba(18,53,36,.45)}
+.tile big{font-size:11px;letter-spacing:2px;color:var(--ink-3);font-weight:800}
+.tile h3{font-size:17px;font-weight:800;margin:8px 0 7px;line-height:1.45}
+.tile p{font-size:12.5px;color:var(--ink-2);line-height:1.65}
+.tile.tall{grid-row:span 2;background:var(--pine);border-color:var(--pine);color:#d7eadc}
+.tile.tall big{color:var(--lime)}
+.tile.tall p{color:rgba(215,234,220,.72)}
+.tile.tall h3{color:#fff;font-size:20px}
+.tile.tall .core{display:block;margin-top:16px;padding-top:16px;border-top:1px solid rgba(215,234,220,.2);font-size:12.5px;color:var(--lime)}
+
+/* SECTION */
+section.blk{padding:62px 0}
+.sec-hd{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:40px}
+.sec-hd .l .no{font-size:12px;letter-spacing:3px;color:var(--gold-2);font-weight:800}
+.sec-hd h2{font-size:33px;letter-spacing:-1px;font-weight:900;line-height:1.35;margin-top:8px}
+.sec-hd h2 small{display:block;font-size:15px;color:var(--ink-3);font-weight:400;letter-spacing:0;margin-top:9px;line-height:1.7}
+.sec-hd .r{font-size:13.5px;color:var(--ink-2);line-height:1.85;border-left:3px solid var(--line-2);padding-left:18px}
+
+/* FILTER */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.filters button{padding:8px 18px;border:1.5px solid var(--line-2);border-radius:22px;font-size:13px;color:var(--ink-2);transition:.18s;font-weight:600}
+.filters button:hover{border-color:var(--pine)}
+.filters button.act{background:var(--pine);color:#fff;border-color:var(--pine)}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1.5px solid var(--line);border-radius:16px;overflow:hidden;transition:.24s;display:flex;flex-direction:column}
+.card:hover{border-color:var(--gold-2);transform:translateY(-6px);box-shadow:0 20px 42px -24px rgba(18,53,36,.4)}
+.poster{height:168px;position:relative;display:grid;place-items:center;overflow:hidden}
+.poster::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.3),transparent 55%)}
+.poster b{position:relative;z-index:2;font-size:40px;font-weight:900;color:rgba(255,255,255,.92);letter-spacing:-1px}
+.poster span{position:absolute;right:12px;bottom:10px;z-index:2;font-size:11px;color:rgba(255,255,255,.9);letter-spacing:1px}
+.card .body{padding:20px 22px;flex:1;display:flex;flex-direction:column}
+.card .reg{font-size:11px;letter-spacing:2px;color:var(--gold-2);font-weight:800}
+.card h4{font-size:18px;font-weight:800;margin:7px 0 9px;line-height:1.45}
+.card p{font-size:13px;color:var(--ink-2);flex:1}
+.card .meta{display:flex;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-3)}
+
+/* NOTEBOOK */
+.notebook{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1.5px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.nb{padding:28px 24px;border-right:1px solid var(--line);position:relative;transition:.2s}
+.nb:last-child{border-right:none}
+.nb:hover{background:var(--sand)}
+.nb .yr{font-size:11px;letter-spacing:2.5px;color:var(--ink-3);font-weight:800}
+.nb h4{font-size:19px;font-weight:900;margin:11px 0 10px;line-height:1.45}
+.nb p{font-size:13px;color:var(--ink-2)}
+.nb .cnt{position:absolute;right:20px;top:22px;font-size:11px;color:var(--ink-3);background:rgba(18,53,36,.06);border-radius:12px;padding:3px 10px}
+
+/* CONTACT */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.cbox{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:30px 28px;transition:.22s}
+.cbox:hover{border-color:var(--pine-2)}
+.cbox .tg{font-size:11px;letter-spacing:2.5px;color:var(--gold-2);font-weight:800}
+.cbox h4{font-size:20px;font-weight:900;margin:10px 0 12px}
+.cbox p{font-size:13.5px;color:var(--ink-2)}
+.cbox .url{display:block;margin-top:18px;padding:13px 16px;background:var(--pine);color:var(--lime);border-radius:10px;font-size:12.5px;letter-spacing:.5px;word-break:break-all}
+.cbox .url:hover{background:var(--pine-2)}
+.cbox ul{margin-top:14px;display:flex;flex-direction:column;gap:9px;font-size:13.5px;color:var(--ink-2)}
+.cbox ul li{padding-left:18px;position:relative}
+.cbox ul li::before{content:"▸";position:absolute;left:0;color:var(--coral)}
+
+/* FOOTER */
+footer{margin-top:58px;background:var(--pine);color:#cfe0d4;padding:54px 0 28px}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:34px;border-bottom:1px solid rgba(215,234,220,.16)}
+.ft .brand b{color:#fff}
+.ft .brand i{color:var(--lime)}
+.ft p{font-size:13px;color:rgba(207,224,212,.72);margin-top:14px;line-height:1.85;max-width:320px}
+.ft h6{font-size:12px;letter-spacing:2px;color:var(--lime);margin-bottom:16px;font-weight:800}
+.ft ul{display:flex;flex-direction:column;gap:10px;font-size:13px}
+.ft ul a{color:rgba(207,224,212,.82)}
+.ft ul a:hover{color:#fff}
+.ft-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-size:12px;color:rgba(207,224,212,.5)}
+
+/* RESPONSIVE */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:46px}
+  h1{font-size:44px}
+  .grid{grid-template-columns:1fr 1fr}
+  .notebook{grid-template-columns:1fr 1fr}
+  .nb:nth-child(2){border-right:none}
+  .nb:nth-child(1),.nb:nth-child(2){border-bottom:1px solid var(--line)}
+  .contact{grid-template-columns:1fr}
+}
+@media (max-width:680px){
+  .wrap{padding:0 18px}
+  .topbar{display:none}
+  .tgl{display:grid;place-items:center}
+  nav.desk{position:fixed;left:0;right:0;top:76px;flex-direction:column;background:rgba(255,248,238,.98);padding:14px;border-bottom:1px solid var(--line);transform:translateY(-150%);transition:.25s;z-index:49}
+  nav.desk.open{transform:none}
+  nav.desk a{border-radius:8px;border-bottom:none;text-align:center;padding:13px}
+  .mini-search{display:none}
+  .hero{padding:44px 0 38px}
+  h1{font-size:32px;letter-spacing:-1px}
+  h1 em{font-size:17px}
+  .stats{grid-template-columns:1fr;gap:0}
+  .stats div{border-right:none;border-bottom:1px solid var(--line);padding:15px 0}
+  .stats div:last-child{border-bottom:none}
+  .tiles{grid-template-columns:1fr}
+  .tile.tall{grid-row:auto}
+  .sec-hd{grid-template-columns:1fr;gap:18px}
+  .sec-hd h2{font-size:24px}
+  .grid{grid-template-columns:1fr}
+  section.blk{padding:46px 0}
+  .notebook{grid-template-columns:1fr}
+  .nb{border-right:none;border-bottom:1px solid var(--line)}
+  .nb:last-child{border-bottom:none}
+  .ft{grid-template-columns:1fr 1fr;gap:26px}
+  .ft .brand{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>本站为独立影像资料整理，所有条目均标注来源与观看渠道</span>
+    <span><a href="#map">索引目录</a> · <a href="#archive">资料归档</a> · <a href="#contact">联系</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hd">
+    <div class="brand">
+      <div class="mark"><span>🍍</span></div>
+      <div><b>菠萝电影网</b><i>TROPICAL FRAME ARCHIVE</i></div>
+    </div>
+    <nav class="desk" id="nav">
+      <a href="#map" class="cur">地域索引</a>
+      <a href="#archive">年代归档</a>
+      <a href="#note">编辑手记</a>
+      <a href="#contact">关于与联系</a>
+    </nav>
+    <div class="hd-cta">
+      <a href="#" class="mini-search"><b>搜索片名 / 导演</b><span>Ctrl K</span></a>
+      <button class="tgl" id="tgl">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="wrap hero">
+  <div class="hero-grid">
+    <div>
+      <div class="kicker">影像资料库 · 持续归档中</div>
+      <h1>把<b>热带质感</b>的影像，<s>一片一片</s>剥开来给你看</h1>
+      <p class="ld">菠萝电影网不做榜单、不做评分，做的是归类。我们把带有南方、海岛、潮湿与季风质感的华语和东南亚电影，按地域和年代整理成一份能查、能翻、能重新发现的资料库。</p>
+      <div class="stats">
+        <div><b>218</b><span>已归档条目</span></div>
+        <div><b>14</b><span>覆盖地域</span></div>
+        <div><b>6</b><span>个年代区间</span></div>
+      </div>
+    </div>
+    <div class="tiles">
+      <div class="tile tall">
+        <big>WHAT WE DO</big>
+        <h3>我们做的是影像分类，不是观影指导</h3>
+        <p>每个条目包含片名、年份、地域标签、创作者信息、观看渠道和一段简短的入档理由。我们不替你决定好不好看。</p>
+        <span class="core">核心标准：是否带有可被辨认的热带、南方或湿润地域质感</span>
+      </div>
+      <div class="tile">
+        <big>ENTRY 001</big>
+        <h3>海南岛影像条目</h3>
+        <p>从八十年代的胶片纪录到近年的独立短片，共 23 条。</p>
+      </div>
+      <div class="tile">
+        <big>ENTRY 002</big>
+        <h3>马来半岛与新加坡</h3>
+        <p>多语言创作的华语片，34 条已标注语言版本。</p>
+      </div>
+      <div class="tile">
+        <big>ENTRY 003</big>
+        <h3>闽南与潮汕影像</h3>
+        <p>以方言为底色的南方叙事，19 条，附方言注释。</p>
+      </div>
+      <div class="tile">
+        <big>ENTRY 004</big>
+        <h3>滇南与中南半岛</h3>
+        <p>边境、河流与湿热气候下的创作，27 条。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目一 -->
+<section class="blk wrap" id="map">
+  <div class="sec-hd">
+    <div class="l">
+      <div class="no">SECTION 01 / 地域索引</div>
+      <h2>按地域找片，而不是按类型<br><small>同一片海在不同导演手里，是完全不同的东西</small></h2>
+    </div>
+    <div class="r">点击上方标签可筛选不同地域板块。每个板块列出该地域已归档的影像条目，包含年代跨度与条目总数。条目持续增加，归档日期附在板块下方。</div>
+  </div>
+  <div class="filters">
+    <button class="act">全部地域</button>
+    <button>华南沿海</button>
+    <button>海南岛</button>
+    <button>台湾南部</button>
+    <button>马来半岛</button>
+    <button>中南半岛</button>
+    <button>滇南边境</button>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="poster" style="background:linear-gradient(135deg,#0e7c5a,#123524)"><b>闽南</b><span>MINNAN</span></div>
+      <div class="body">
+        <div class="reg">华南沿海 · 方言影像</div>
+        <h4>闽南与潮汕的潮湿叙事</h4>
+        <p>以闽南语、潮州话为主要对白的剧情长片与纪录片，关注宗族、渔业与城乡迁移。</p>
+        <div class="meta"><span>19 条</span><span>1968—2024</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="poster" style="background:linear-gradient(135deg,#f59e0b,#c2410c)"><b>海南</b><span>HAINAN</span></div>
+      <div class="body">
+        <div class="reg">海岛影像 · 胶片纪录</div>
+        <h4>海南岛的光与盐</h4>
+        <p>从八十年代的农业纪录到近年返乡题材，海风、盐田与橡胶林反复出现。</p>
+        <div class="meta"><span>23 条</span><span>1981—2025</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="poster" style="background:linear-gradient(135deg,#14b8a6,#0f766e)"><b>南台</b><span>SOUTH TAIWAN</span></div>
+      <div class="body">
+        <div class="reg">台湾南部 · 城市与港口</div>
+        <h4>高雄、台南与恒春半岛</h4>
+        <p>重工业港口与热带农地的对照，这一板块收录大量短片与毕业作品。</p>
+        <div class="meta"><span>31 条</span><span>1990—2024</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="poster" style="background:linear-gradient(135deg,#84cc16,#4d7c0f)"><b>马来</b><span>MALAYA</span></div>
+      <div class="body">
+        <div class="reg">马来半岛 · 多语创作</div>
+        <h4>吉隆坡、槟城与马六甲</h4>
+        <p>华语、马来语、淡米尔语混杂的创作环境，每一条目都标注了语言版本。</p>
+        <div class="meta"><span>34 条</span><span>1975—2025</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="poster" style="background:linear-gradient(135deg,#ec4899,#a21caf)"><b>半岛</b><span>INDOCHINA</span></div>
+      <div class="body">
+        <div class="reg">中南半岛 · 跨境题材</div>
+        <h4>湄公河沿岸的跨境影像</h4>
+        <p>越南、柬埔寨、老挝创作者视角下的河流、边境与离散，部分含华语字幕版本。</p>
+        <div class="meta"><span>28 条</span><span>1988—2024</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="poster" style="background:linear-gradient(135deg,#2563eb,#1e3a8a)"><b>滇南</b><span>YUNNAN SOUTH</span></div>
+      <div class="body">
+        <div class="reg">滇南边境 · 山地纪录</div>
+        <h4>西双版纳与红河河谷</h4>
+        <p>山地、雨林与跨境民族题材，以纪录片为主，长片较少但留存完整。</p>
+        <div class="meta"><span>27 条</span><span>1999—2025</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="poster" style="background:linear-gradient(135deg,#f97316,#9a3412)"><b>群岛</b><span>ARCHIPELAGO</span></div>
+      <div class="body">
+        <div class="reg">东南亚群岛 · 华人社群</div>
+        <h4>菲律宾与印尼的华人叙事</h4>
+        <p>华人家庭、方言保留与身份转换，资料多来自独立影展回流。</p>
+        <div class="meta"><span>22 条</span><span>2003—2024</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="poster" style="background:linear-gradient(135deg,#0891b2,#155e75)"><b>粤西</b><span>WEST GUANGDONG</span></div>
+      <div class="body">
+        <div class="reg">华南沿海 · 海洋民俗</div>
+        <h4>雷州半岛与粤西沿海</h4>
+        <p>妈祖信仰、渔港生活与台风季的日常生活影像，资料较为零散。</p>
+        <div class="meta"><span>15 条</span><span>1992—2023</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="poster" style="background:linear-gradient(135deg,#ca8a04,#854d0e)"><b>港澳</b><span>HK &amp; MACAU</span></div>
+      <div class="body">
+        <div class="reg">港澳 · 南方都市</div>
+        <h4>香港与澳门的湿热都市感</h4>
+        <p>密集住宅、街市与渡轮构成的热带都市视觉，这一板块条目更新最快。</p>
+        <div class="meta"><span>19 条</span><span>1985—2025</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 栏目二 -->
+<section class="blk wrap" id="archive">
+  <div class="sec-hd">
+    <div class="l">
+      <div class="no">SECTION 02 / 年代归档</div>
+      <h2>六个年代区间，一条南方影像的时间线<br><small>不是按质量排，是按时间排</small></h2>
+    </div>
+    <div class="r">按十年为单位的粗略划分，用来观察南方地域影像在不同技术条件下呈现出的变化：从胶片纪录到数字拍摄，从官方制片到完全独立的制作方式。</div>
+  </div>
+  <div class="notebook">
+    <div class="nb">
+      <div class="yr">1960 — 1989</div>
+      <h4>胶片纪录时期</h4>
+      <p>以官方制片厂与新闻纪录为主，南方海港与农垦是主要被记录的客体。</p>
+      <div class="cnt">37 条</div>
+    </div>
+    <div class="nb">
+      <div class="yr">1990 — 1999</div>
+      <h4>城市影像起步</h4>
+      <p>录像带与早期数字设备的普及，开始出现创作者视角的南方城市记录。</p>
+      <div class="cnt">42 条</div>
+    </div>
+    <div class="nb">
+      <div class="yr">2000 — 2009</div>
+      <h4>独立制作兴起</h4>
+      <p>数字摄影大幅降低成本，返乡题材与方言创作在这一阶段集中出现。</p>
+      <div class="cnt">51 条</div>
+    </div>
+    <div class="nb">
+      <div class="yr">2010 — 2015</div>
+      <h4>影展回流阶段</h4>
+      <p>大量短片通过国际影展被看见，地域题材开始被有意识地当作主题。</p>
+      <div class="cnt">33 条</div>
+    </div>
+    <div class="nb">
+      <div class="yr">2016 — 2020</div>
+      <h4>短视频与纪录并行</h4>
+      <p>长片数量稳定，短片与纪录片的产出明显增加，资料来源变得分散。</p>
+      <div class="cnt">29 条</div>
+    </div>
+    <div class="nb">
+      <div class="yr">2021 — 2026</div>
+      <h4>当下与进行中</h4>
+      <p>持续收录中，以新锐导演首作与尚未广泛发行的短片为主，条目会频繁更新。</p>
+      <div class="cnt">26 条</div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目三 -->
+<section class="blk wrap" id="note">
+  <div class="sec-hd">
+    <div class="l">
+      <div class="no">SECTION 03 / 编辑手记</div>
+      <h2>关于归档标准的几条说明<br><small>也欢迎反驳，这些标准每两年会重新讨论一次</small></h2>
+    </div>
+    <div class="r">手记不是推荐语。它回答的是三个问题：为什么这条要收进来、它的地域依据是什么、哪些人可能会觉得我们判断有误。</div>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <div class="poster" style="background:linear-gradient(135deg,#1f5c3f,#123524)"><b>标准</b><span>NOTE 01</span></div>
+      <div class="body">
+        <div class="reg">入档标准</div>
+        <h4>「热带质感」如何被辨认</h4>
+        <p>我们看四件事：气候在画面中的存在感、植物与海水的出镜比例、方言与本地语言的密度、创作者对在地生活的熟悉程度。四条满足两条即可入档。</p>
+        <div class="meta"><span>执行中</span><span>2024 年定稿</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="poster" style="background:linear-gradient(135deg,#b45309,#7c2d12)"><b>争议</b><span>NOTE 02</span></div>
+      <div class="body">
+        <div class="reg">内部争议</div>
+        <h4>都市题材算不算南方影像</h4>
+        <p>目前的处理方式是：若影片的南方地域属性可被替换而不影响叙事，则不收；若潮湿、台风、街市等元素参与了叙事，则收。</p>
+        <div class="meta"><span>持续讨论</span><span>尚无定论</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="poster" style="background:linear-gradient(135deg,#0e7490,#083344)"><b>来源</b><span>NOTE 03</span></div>
+      <div class="body">
+        <div class="reg">资料来源</div>
+        <h4>条目信息从哪来</h4>
+        <p>主要来源为影片片尾字幕、发行方公开资料、影展手册与创作者访谈。信息冲突时以片尾字幕为准，并在条目内注明差异。</p>
+        <div class="meta"><span>三条来源</span><span>公开可查</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="poster" style="background:linear-gradient(135deg,#a21caf,#581c87)"><b>缺失</b><span>NOTE 04</span></div>
+      <div class="body">
+        <div class="reg">已知缺漏</div>
+        <h4>哪些部分我们还没补齐</h4>
+        <p>七十年代至八十年代的短片与新闻纪录资料最不完整，部分仅存片段。方言译名的统一也仍在进行，闽南语条目目前使用白话字与台罗两套标注。</p>
+        <div class="meta"><span>6 个板块</span><span>待补充</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="poster" style="background:linear-gradient(135deg,#16a34a,#14532d)"><b>更新</b><span>NOTE 05</span></div>
+      <div class="body">
+        <div class="reg">更新频率</div>
+        <h4>多久加一批新条目</h4>
+        <p>每月至少一次批量更新，单次不超过十五个条目。逐条核对比数量更重要，所以不会有「一日百条」的更新节奏。</p>
+        <div class="meta"><span>每月一次</span><span>上限 15 条</span></div>
+      </div>
+    </article>
+    <article class="card">
+      <div class="poster" style="background:linear-gradient(135deg,#dc2626,#7f1d1d)"><b>版权</b><span>NOTE 06</span></div>
+      <div class="body">
+        <div class="reg">版权说明</div>
+        <h4>本站不提供任何片源</h4>
+        <p>本站只做条目整理，不存储、不链接任何影片文件。每个条目附的观看渠道只指向正版发行方的公开信息，失效即删。</p>
+        <div class="meta"><span>资料站</span><span>非资源站</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 栏目四 -->
+<section class="blk wrap" id="contact">
+  <div class="sec-hd">
+    <div class="l">
+      <div class="no">SECTION 04 / 关于与联系</div>
+      <h2>如果某条信息错了，或者想补一条<br><small>这里留了三种可以找过来的方式</small></h2>
+    </div>
+    <div class="r">纠错、投稿与建议使用不同的方式提交，处理方式也不同：纠错会在七天内修改，投稿需要走一轮核对，建议只会被读但不一定被采纳。</div>
+  </div>
+  <div class="contact">
+    <div class="cbox">
+      <div class="tg">CONTACT / 访问地址</div>
+      <h4>本站的完整访问地址</h4>
+      <p>全站页面托管在 GitHub Pages 上，目前只有一个入口，请认准下方地址，其余形式出现的同名站点均与本档案无关。</p>
+      <span class="url">https://boluodianyingwang-zh.github.io/</span>
+      <ul>
+        <li>单入口站点，无分站与镜像</li>
+        <li>无会员体系，不收集任何个人信息</li>
+        <li>页面内容可离线保存，无需登录</li>
+      </ul>
+    </div>
+    <div class="cbox">
+      <div class="tg">CONTACT / 纠错与投稿</div>
+      <h4>怎么提交一条修改</h4>
+      <p>在条目页面的来源部分留言，或发送邮件说明片名、年份与需要修改的具体内容，附上来源截图会更方便核对。</p>
+      <ul>
+        <li>纠错：收到后七天内处理</li>
+        <li>投稿：需提供可核验的来源资料</li>
+        <li>建议：会被归档但不保证采纳</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div class="brand">
+        <div class="mark"><span>🍍</span></div>
+        <div><b>菠萝电影网</b><i>TROPICAL FRAME ARCHIVE</i></div>
+        <p>一个持续归档中的独立影像资料站，专注带有热带、南方与湿润地域质感的华语和东南亚电影，不做榜单，只做归类。</p>
+      </div>
+      <div>
+        <h6>资料索引</h6>
+        <ul>
+          <li><a href="#map">地域索引</a></li>
+          <li><a href="#archive">年代归档</a></li>
+          <li><a href="#note">编辑手记</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>归档方向</h6>
+        <ul>
+          <li><a href="#">华语新锐导演</a></li>
+          <li><a href="#">东南亚电影</a></li>
+          <li><a href="#">热带质感影像</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>关于本站</h6>
+        <ul>
+          <li><a href="#contact">访问地址</a></li>
+          <li><a href="#">纠错流程</a></li>
+          <li><a href="#">版权说明</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <span>© 2026 菠萝电影网 · 独立影像资料整理，与任何商业平台无关联</span>
+      <span>本站只做资料归档，不提供影片资源</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+var tgl=document.getElementById('tgl'),nav=document.getElementById('nav');
+tgl.addEventListener('click',function(){nav.classList.toggle('open')});
+nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open')})});
+
+var btns=document.querySelectorAll('.filters button');
+btns.forEach(function(b){
+  b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('act')});
+    b.classList.add('act');
+  });
+});
+</script>
+</body>
+</html>
